@@ -48,15 +48,38 @@
                 </div>
                 <div class="newsletter">
                 <h3>ĐĂNG KÍ NHẬN THÔNG TIN</php></h3>
-                <form class="newsletter-form" id="newsletter-form" action="/site/site/receivenewsletter" method="post">
+                <form class="newsletter-form1" id="newsletter-form1" action="" method="post">
                     <div class="box-newsletter">
-                        <input value="Guest" class="wid-50" placeholder="Họ và tên" title="Họ và tên" name="Newsletters[name]" id="Newsletters_name" type="hidden" />        <input value="" class="wid-51" placeholder="Số điện thoại" title="Số điện thoại" name="Newsletters[phone]" id="Newsletters_phone" type="hidden" />        <input class="" placeholder="Nhập địa chỉ email" title="Email" name="Newsletters[email]" id="Newsletters_email" type="text" maxlength="100" value="" />        <input class="btn btn-sm" id="newslettersubmit" type="submit" name="yt0" value="Đăng ký" />        <!--        <input type="submit" value="Gửi">-->
+                        <!-- <input value="Guest" class="wid-50" placeholder="Họ và tên" title="Họ và tên" name="Newsletters[name]" id="Newsletters_name" type="hidden" /> -->
+                        <!-- <input value="" class="wid-51" placeholder="Số điện thoại" title="Số điện thoại" name="Newsletters[phone]" id="Newsletters_phone" type="hidden" /> -->
+                        <input class="" placeholder="Nhập địa chỉ email" title="Email" name="entry.1647044500" id="Newsletters_email" type="text" maxlength="100" value="" />
+                        <input class="btn btn-sm" id="ddnewslettersubmit" type="submit" name="yt0" value="Đăng ký" />        <!--        <input type="submit" value="Gửi">-->
                         <div class="errorMessage" id="Newsletters_email_em_" style="display:none"></div>
                     </div>
-                    <div class="newsletters-message" style="display: none;">
+                    <div class="newsletters-message" style="display: none; color: yellow; margin-top: 5px;">
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $('#ddnewslettersubmit').click(function(e) {
+        e.preventDefault();
+        var email = $('#Newsletters_email').val();
+        console.log(email);
+        $.ajax({
+            method: 'POST',
+            url : 'https://docs.google.com/forms/d/e/1FAIpQLSdj1_hC143Bt0Gxx2MY7MMyiJ-goH7JbcOvKZeqywKHGzbC2Q/formResponse',
+            type: 'jsonp',
+            data: {'entry.1647044500': email},
+            success: function (res) { //it's never success :D
+            },
+            error: function(err) {
+                console.log(err);
+                $('.newsletters-message').html('Đăng kí email thành công').show();
+            }
+        });
+    });
+</script>
