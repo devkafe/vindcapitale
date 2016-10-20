@@ -4,4 +4,4 @@ Disallow: /images/
 Disallow: /dang-nhap
 Disallow: /dang-ky
 Disallow: /gio-hang
-Sitemap: http://localhost:8000/sitemap.xml
+Sitemap: http://vin.tool4mkt.com/sitemap.xml
