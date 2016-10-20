@@ -163,4 +163,8 @@ $(document).ready(function () {
     if (screen.width > 1700) {
         $(".type-text").css("left", 300);
     };
+
+    //load footer
+    $('#dd-footer').load('footer.html');
+    $('.header-social-icon').load('header-social-icon.html');
 });
