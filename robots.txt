@@ -1,0 +1,7 @@
+# Robots.txt
+User-agent: *
+Disallow: /images/
+Disallow: /dang-nhap
+Disallow: /dang-ky
+Disallow: /gio-hang
+Sitemap: http://vin.tool4mkt.com/sitemap.xml
