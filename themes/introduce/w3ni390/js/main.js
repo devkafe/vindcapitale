@@ -167,4 +167,7 @@ $(document).ready(function () {
     //load footer
     $('#dd-footer').load('footer.html');
     $('.header-social-icon').load('header-social-icon.html');
+    $.get('float-form.html', function(res) {
+        $('body').append(res);
+    });
 });
